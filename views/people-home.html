@@ -7,17 +7,17 @@
   <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="icon" href="./img/asset-favicon.ico" />
+  <link rel="icon" href="/public/img/asset-favicon.ico" />
   <title>社交-我的主页</title>
   <!-- 页面 css js -->
-  <link rel="stylesheet" type="text/css" href="./plugins/normalize-css/normalize.css" />
-  <link rel="stylesheet" type="text/css" href="./plugins/yui/cssgrids-min.css" />
-  <link rel="stylesheet" type="text/css" href="./plugins/sui/sui.min.css" />
-  <link rel="stylesheet" type="text/css" href="./plugins/sui/sui-append.min.css" />
-  <link rel="stylesheet" type="text/css" href="./plugins/font-awesome/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="./css/widget-base.css" />
-  <link rel="stylesheet" type="text/css" href="./css/widget-head-foot.css" />
-  <link rel="stylesheet" type="text/css" href="./css/page-sj-person-homepage.css" />
+  <link rel="stylesheet" type="text/css" href="/public/plugins/normalize-css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="/public/plugins/yui/cssgrids-min.css" />
+  <link rel="stylesheet" type="text/css" href="/public/plugins/sui/sui.min.css" />
+  <link rel="stylesheet" type="text/css" href="/public/plugins/sui/sui-append.min.css" />
+  <link rel="stylesheet" type="text/css" href="/public/plugins/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="/public/css/widget-base.css" />
+  <link rel="stylesheet" type="text/css" href="/public/css/widget-head-foot.css" />
+  <link rel="stylesheet" type="text/css" href="/public/css/page-sj-person-homepage.css" />
 </head>
 
 <body>
@@ -27,7 +27,7 @@
     <header>
       <div class="sui-navbar">
         <div class="navbar-inner">
-          <a href="index-logined.html" class="sui-brand"><img src="./img/asset-logo-black.png" alt="社交" /></a>
+          <a href="index-logined.html" class="sui-brand"><img src="/public/img/asset-logo-black.png" alt="社交" /></a>
           <ul class="sui-nav">
             <li class="active"><a href="./headline-logined.html">头条</a></li>
             <li><a href="./qa-logined.html">问答</a></li>
@@ -45,12 +45,16 @@
             <li class="hover"> <span class="fa fa-plus "></span>
               <ul class="hoverinfo">
                 <li><i class="fa fa-share-alt" aria-hidden="true"></i> <a href="./headline-submit.html">去分享</a></li>
-                <li><i class="fa fa-question-circle" aria-hidden="true"></i> <a href="./qa-submit.html" target="_blank">提问题</a></li>
-                <li><i class="fa fa-comments" aria-hidden="true"></i><a href="./spit-submit.html" target="_blank">去吐槽</a></li>
-                <li><i class="fa fa-heartbeat" aria-hidden="true"></i> <a href="./makeFriends-submit.html" target="_blank">发约会</a></li>
+                <li><i class="fa fa-question-circle" aria-hidden="true"></i> <a href="./qa-submit.html"
+                    target="_blank">提问题</a></li>
+                <li><i class="fa fa-comments" aria-hidden="true"></i><a href="./spit-submit.html"
+                    target="_blank">去吐槽</a></li>
+                <li><i class="fa fa-heartbeat" aria-hidden="true"></i> <a href="./makeFriends-submit.html"
+                    target="_blank">发约会</a></li>
               </ul>
             </li>
-            <li><a href="./person-homepage.html" target="_blank" class="homego"><img src="./img/widget-photo.png" alt="用户头像" /></a></li>
+            <li><a href="/public/person-homepage.html" target="_blank" class="homego"><img src="./img/widget-photo.png"
+                  alt="用户头像" /></a></li>
           </div>
         </div>
       </div>
@@ -61,11 +65,11 @@
       <div class="person-baseinfo">
         <!--头像信息-->
         <div class="photo">
-          <img src="./img/widget-myphoto.jpg" alt="" class="person" />
+          <img src="/public/img/widget-myphoto.jpg" alt="" class="person" />
           <div class="share">
-            <span><img src="./img/asset-QQ.png" alt="" width="34" height="28" /></span>
-            <span><img src="./img/asset-weixin.png" alt="" width="28" height="28" /></span>
-            <span><img src="./img/asset-weibo.png" alt="" width="28" height="28" /></span>
+            <span><img src="/public/img/asset-QQ.png" alt="" width="34" height="28" /></span>
+            <span><img src="/public/img/asset-weixin.png" alt="" width="28" height="28" /></span>
+            <span><img src="/public/img/asset-weibo.png" alt="" width="28" height="28" /></span>
           </div>
         </div>
         <!--文字信息-->
@@ -103,7 +107,7 @@
       </div>
       <!--右侧编辑-->
       <div class="edit-info">
-        <h4>个人简介<span class="addedit"><img src="./img/widget-edit.png" width="12" height="12" />编辑</span></h4>
+        <h4>个人简介<span class="addedit"><img src="/public/img/widget-edit.png" width="12" height="12" />编辑</span></h4>
         <div class="info-box">
           <div class="edit-intro">
             暂时没有个人简介
@@ -128,20 +132,40 @@
         <div class="tab-content tab-wraped">
           <div id="one" class="tab-pane active">
             <ul class="question-list">
-              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a href="#">有关PHP初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span> </li>
-              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a href="#">有关JAVA初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span> </li>
-              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a href="#">有关HTML5初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span> </li>
-              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a href="#">有关C++初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span> </li>
-              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a href="#">有关python初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span> </li>
+              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a
+                    href="#">有关PHP初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span>
+              </li>
+              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a
+                    href="#">有关JAVA初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span>
+              </li>
+              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a
+                    href="#">有关HTML5初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span>
+              </li>
+              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a
+                    href="#">有关C++初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span>
+              </li>
+              <li> <span class="fl good"><span class="num">12</span> 有用</span> <span class="title"><a
+                    href="#">有关python初级进阶的问题</a></span> <span class="fr date">4月6日</span> <span class="clearfix"></span>
+              </li>
             </ul>
           </div>
           <div id="two" class="tab-pane">
             <ul class="question-list">
-              <li> <span class="fl good"> <span class="num">8</span> 有用</span> <span class="title"><a href="#">有关PHP初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span class="clearfix"></span> </li>
-              <li> <span class="fl good"> <span class="num">7</span> 有用</span> <span class="title"><a href="#">有关JAVA初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span class="clearfix"></span> </li>
-              <li> <span class="fl good"> <span class="num">6</span> 有用</span> <span class="title"><a href="#">有关HTML5初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span class="clearfix"></span> </li>
-              <li> <span class="fl good"> <span class="num">12</span> 有用</span> <span class="title"><a href="#">有关C++初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span class="clearfix"></span> </li>
-              <li> <span class="fl good"> <span class="num">12</span> 有用</span> <span class="title"><a href="#">有关python初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span class="clearfix"></span> </li>
+              <li> <span class="fl good"> <span class="num">8</span> 有用</span> <span class="title"><a
+                    href="#">有关PHP初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span
+                  class="clearfix"></span> </li>
+              <li> <span class="fl good"> <span class="num">7</span> 有用</span> <span class="title"><a
+                    href="#">有关JAVA初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span
+                  class="clearfix"></span> </li>
+              <li> <span class="fl good"> <span class="num">6</span> 有用</span> <span class="title"><a
+                    href="#">有关HTML5初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span
+                  class="clearfix"></span> </li>
+              <li> <span class="fl good"> <span class="num">12</span> 有用</span> <span class="title"><a
+                    href="#">有关C++初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span
+                  class="clearfix"></span> </li>
+              <li> <span class="fl good"> <span class="num">12</span> 有用</span> <span class="title"><a
+                    href="#">有关python初级进阶的问题</a></span> <span class="fr date">2017-07-05 15:08</span> <span
+                  class="clearfix"></span> </li>
             </ul>
           </div>
         </div>
@@ -159,7 +183,8 @@
                 <span class="tagnum">100</span> 关注
               </div>
               <div class="intro">
-                PHP，是英文超文本预处理语言 Hypertext Preprocessor 的缩写。PHP 是一种开源的通用计算机脚本语言，尤其适用于网络开发并可嵌入HTML中使用。PHP 的语法借鉴吸收C语言、Java和Perl等流行计算机语言的特点，易于一般程序员学习。
+                PHP，是英文超文本预处理语言 Hypertext Preprocessor 的缩写。PHP 是一种开源的通用计算机脚本语言，尤其适用于网络开发并可嵌入HTML中使用。PHP
+                的语法借鉴吸收C语言、Java和Perl等流行计算机语言的特点，易于一般程序员学习。
               </div>
             </li>
             <li>

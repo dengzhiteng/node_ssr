@@ -17,7 +17,7 @@ app.use(
   })
 ); // application/x-www-form-urlencoded key=value&key=value...
 
-const env = nunjucks.configure(path.join(__dirname, "./view/"), {
+const env = nunjucks.configure(path.join(__dirname, "./views/"), {
   autoescape: true,
   express: app,
   watch: true, // 启动模板文件监视，文件改变，重新预编译，建议开发阶段开启此功能
@@ -25,5 +25,8 @@ const env = nunjucks.configure(path.join(__dirname, "./view/"), {
 
 app.get("/", function (req, res, next) {
   res.render("index.html");
+});
+app.get("/people-home", function (req, res, next) {
+  res.render("people-home.html");
 });
 app.listen(3000, () => {});

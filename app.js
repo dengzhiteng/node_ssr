@@ -20,7 +20,7 @@ app.use(
 const env = nunjucks.configure(path.join(__dirname, "./views/"), {
   autoescape: true,
   express: app,
-  watch: true, // 启动模板文件监视，文件改变，重新预编译，建议开发阶段开启此功能
+  watch: true,
 });
 
 app.get("/", function (req, res, next) {

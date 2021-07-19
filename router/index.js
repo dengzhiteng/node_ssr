@@ -1,11 +1,12 @@
 const express = require("express");
 let router = express.Router();
 const indexCtro= require("../controller");
-console.log(indexCtro);
 
 router
 .get('/', indexCtro.showIndex)
     .get('/people/home.html', indexCtro.peopleHome)
-    .get('/login',indexCtro.login)
+    .get('/login.html',indexCtro.login)
+    .post('/signup', indexCtro.signup)
+    .get('/captcha', indexCtro.captcha)
 
 module.exports = router;

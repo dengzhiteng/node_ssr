@@ -66,16 +66,17 @@
             <div class="radio-content">
               <div id="a1" class="phone">
                 <div class="control-group">
-                  <label for="nickname" class="control-label">昵称</label>
+                  <label for="nickname" class="control-label">用户名</label>
                   <div class="controls">
-                    <input type="text" id="nickname" name="nickname" required placeholder="请输入昵称" class="input-xlarge" />
+                    <input type="text" id="userName" name="userName" required placeholder="请输入用户名" class="input-xlarge" />
                   </div>
                 </div>
                 <div class="control-group">
                   <label for="captcha" class="control-label">验证码</label>
                   <div class="controls">
                     <input type="text" id="captcha" name="captcha" required placeholder="请输入验证码" class="input-xlarge" style="width: 200px;" />
-                    <img id="captcha_img" src="/captcha" alt="captcha">
+                    <!-- <img id="captcha_img" src="/captcha" alt="captcha"> -->
+                    <img src="/captcha" onclick={$(event.target).attr('src','/captcha?'+Math.random())}>
                   </div>
                 </div>
               </div>
@@ -124,131 +125,36 @@
   </div>
   {% include "./layout/footer.html" %}
   <script src="/node_modules/jquery/dist/jquery.js"></script>
-  <script src="/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+  <!-- <script src="/node_modules/jquery-validation/dist/jquery.validate.js"></script> -->
   <script>
-    $('#captcha_img').on('click', window.handleCaptcha)
+      const $signupForm = $('#signup_form')
+      const $signinForm = $('#signin_form')
+     
 
-    const $signupForm = $('#signup_form')
-    const $signinForm = $('#signin_form')
-
-    $signupForm.on('submit', handleSignup)
-    $signinForm.on('submit', handleSignin)
-    
-    // $signupForm.validate({
-    //   rules: { // 验证规则对象
-    //     email: {
-    //       required: true,
-    //       // minlength: 3,
-    //       // maxlength: 12,
-    //       // remote: '/users/check' // /users/check?username=xxx
-    //     },
-    //     password: {
-    //       required: true,
-    //       // minlength: 6,
-    //       // maxlength: 18
-    //     },
-    //     nickname: {
-    //       required: true,
-    //       minlength: 2,
-    //       maxlength: 12,
-    //       // remote: '/users/check' // /users/check?nickname=xxx
-    //     },
-    //     captcha: {
-    //       required: true,
-    //       // remote: '/captcha/check'
-    //     },
-    //     agree: {
-    //       required: true
-    //     }
-    //   },
-    //   messages: {
-    //     username: {
-    //       required: '请输入用户名',
-    //       minlength: '用户名必须为3-12位',
-    //       maxlength: '用户名必须为3-12位',
-    //       remote: '用户名已存在'
-    //     },
-    //     password: {
-    //       required: '请输入密码',
-    //       minlength: '密码必须为6-18位',
-    //       maxlength: '密码必须为6-18位'
-    //     },
-    //     nickname: {
-    //       required: '请输入昵称',
-    //       minlength: '昵称必须为2-12位',
-    //       maxlength: '昵称必须为2-12位',
-    //       remote: '昵称已存在'
-    //     },
-    //     captcha: {
-    //       required: '请输入验证码',
-    //       remote: '验证码错误或者已过期，请点击获取最新验证码'
-    //     },
-    //     agree: {
-    //       required: '必须同意用户协议'
-    //     }
-    //   },
-    //   submitHandler: function (form) {
-    //     window.handleSignup()
-    //   }
-    // })
-
-    // $signinForm.validate({
-    //   rules: { // 验证规则对象
-    //     username: {
-    //       required: true
-    //     },
-    //     password: {
-    //       required: true
-    //     }
-    //   },
-    //   messages: {
-    //     username: {
-    //       required: '请输入用户名'
-    //     },
-    //     password: {
-    //       required: '请输入密码'
-    //     }
-    //   },
-    //   submitHandler: function (form) {
-    //     window.handleSignin()
-    //   }
-    // })
-
-    function handleCaptcha() {
-      $(this).attr('src', '/captcha?' + Math.random())
-    }
-
-    function handleSignup() {
-      $.ajax({
-        url: '/signup',
-        method: 'POST',
-        data: $signupForm.serialize(),
-        success: function (data) {
-          window.localStorage.setItem('userInfo', JSON.stringify(data))
-          window.location.href = '/'
-        },
-        error: function (err) {
-          console.log('注册失败：', err)
+      $signupForm.on('submit', handleSignup)
+      $signinForm.on('submit', handleSignin)
+      // 注册新账号
+      function handleSignup() {
+          $.ajax({
+            url: '/signup',
+            method: 'post',
+            data: $signupForm.serialize(),
+            success: function (data) {
+              window.localStorage.setItem('userInfo', JSON.stringify(data))
+              window.location.href = '/'
+            },
+            error: function (err) {
+              console.log('注册失败：', err)
+            }
+          })
+          // 阻止表单重载
+          return false
         }
-      })
-      return false
-    }
 
-    function handleSignin() {
-      $.ajax({
-        url: '/signin',
-        method: 'POST',
-        data: $signinForm.serialize(),
-        success: function (data) {
-          window.localStorage.setItem('userInfo', JSON.stringify(data))
-          window.location.href = '/'
-        },
-        error: function (err) {
-          console.log('登录失败', err)
+        function handleSignin(){
+          // 阻止表单重载
+          return false
         }
-      })
-      return false
-    }
   </script>
 </body>
 

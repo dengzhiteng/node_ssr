@@ -25,4 +25,7 @@ const env = nunjucks.configure(path.join(__dirname, "./views/"), {
 });
 app.use(router);
 
-app.listen(3000, () => {});
+app.listen(3000, () => {
+  console.log('服务启动成功.')
+  console.log(`http://localhost:3000/`)
+});

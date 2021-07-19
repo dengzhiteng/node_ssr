@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const nunjucks = require("nunjucks");
+const router = require("./router")
 
 // 实现静态资源托管
 app.use("/public", express.static(path.join(__dirname, "/public/")));
@@ -22,11 +23,6 @@ const env = nunjucks.configure(path.join(__dirname, "./views/"), {
   express: app,
   watch: true,
 });
+app.use(router);
 
-app.get("/", function (req, res, next) {
-  res.render("index.html");
-});
-app.get("/people-home", function (req, res, next) {
-  res.render("people-home.html");
-});
 app.listen(3000, () => {});
